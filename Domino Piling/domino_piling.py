@@ -1,9 +1,5 @@
-import sys
-def count_dominoes():
-	rows = int(sys.argv[1])
-	cols = int(sys.argv[2])
-	return (rows * cols) // 2
-
-if __name__ == '__main__':
-	print(count_dominoes())
+nums = input().split()
+rows = int(nums[0])
+cols = int(nums[1])
+print((rows * cols) // 2)
 
