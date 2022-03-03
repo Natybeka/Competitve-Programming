@@ -42,4 +42,19 @@ def find(arr, start, end, key):
             return mid
     return -1
     
+# Another solution
+# from collections import Counter
+# import math
+# class Solution:
+#     def maxOperations(self, nums: List[int], k: int) -> int:
+#         counts = Counter(nums)
+#         result = 0
+#         for number in counts:
+#             temp = k - number
+#             if temp == number:
+#                 result += counts[number] // 2
+#                 continue
+#             if temp in counts.keys() and temp < number:
+#                 result += min(counts[number], counts[temp])
+#         return result
 print(maxOperations([2,2,2,3,1,1,4,1],4))
