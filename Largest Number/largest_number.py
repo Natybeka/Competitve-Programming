@@ -1,6 +1,5 @@
 from functools import cmp_to_key
-
-
+from typing import List
 class Solution:
     def comparator(self, num1, num2):
         if str(num1) + str(num2) > str(num2) + str(num1):
