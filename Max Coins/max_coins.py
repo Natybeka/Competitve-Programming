@@ -18,4 +18,7 @@ def maxCoins(piles):
         index -= 2
     return sumPile
 
+# Shorthand for the code above
+# return sum(sorted(piles)[len(piles) // 3 :: 2])
+
 print(maxCoins([2,4,1,2,7,8]))
