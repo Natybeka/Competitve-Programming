@@ -37,7 +37,7 @@ class MinStack:
 
     def getMin(self) -> int:
         return self.stack[self.size - 1].min
-
+# Another solution involves two stacks minima and main stack
 # Some test code
 minStack = MinStack()
 minStack.push(-2)
