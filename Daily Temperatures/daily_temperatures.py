@@ -12,14 +12,14 @@ from typing import List
 
 
 def dailyTemperatures(temperatures: List[int]) -> List[int]:
-    monoStack = [[0, temperatures[0]]]
+    monoStack = [0]
     greaterTemp = [0] * len(temperatures)
 
     for count, temperature in enumerate(temperatures[1:], start=1):
-        while monoStack and temperature > monoStack[-1][1]:
+        while monoStack and temperature > temperatures[monoStack[-1]]:
             previousDay = monoStack.pop()
-            greaterTemp[previousDay[0]] = count - previousDay[0]
-        monoStack.append([count, temperature])
+            greaterTemp[previousDay] = count - previousDay
+        monoStack.append(count)
     return greaterTemp
 
 
