@@ -24,6 +24,8 @@
 # maxHeap for accessing the most occuring task first
 # and process other tasks in the maxHeap until the
 # first processed task is ready to be executed again
+# complexity O(n * m [0,100]) * log 26(for the heapify operation)
+# Closer to linear time so efficient
 import heapq
 from typing import List
 from collections import Counter
