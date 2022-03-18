@@ -18,18 +18,36 @@
 # Solution find the element in the larger list
 # Iterate from that index to the end of the list
 # until you find a larger element
+# Brute force solution
 from typing import List
 
 
-def nextGreaterElement(nums1: List[int], nums2: List[int]) -> List[int]:
-    retArr = [-1] * len(nums1)
-    for i in range(len(nums1)):
-        startIndex = nums2.index(nums1[i])
-        if startIndex == len(nums2) - 1:
-            continue
+# def nextGreaterElement(nums1: List[int], nums2: List[int]) -> List[int]:
+#     retArr = [-1] * len(nums1)
+#     for i in range(len(nums1)):
+#         startIndex = nums2.index(nums1[i])
+#         if startIndex == len(nums2) - 1:
+#             continue
 
-        for j in range(startIndex + 1, len(nums2)):
-            if nums2[j] > nums2[startIndex]:
-                retArr[i] = nums2[j]
-                break
-    return retArr
+#         for j in range(startIndex + 1, len(nums2)):
+#             if nums2[j] > nums2[startIndex]:
+#                 retArr[i] = nums2[j]
+#                 break
+#     return retArr
+
+# Solution 2 better solution
+# Keep track of the greater element to the right
+# of each element in nums2 in a dictionary using a decreasing monostack
+def nextGreaterElement(nums1: List[int], nums2: List[int]) -> List[int]:
+    monoStack = [nums2[0]]
+    nextGreater = {}
+
+    for number in nums2[1:]:
+        while monoStack and number > monoStack[-1]:
+            previous = monoStack.pop()
+            nextGreater[previous] = number
+        monoStack.append(number)
+    return [nextGreater[num] if num in nextGreater else -1 for num in nums1]
+
+
+print(nextGreaterElement())
