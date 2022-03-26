@@ -30,7 +30,14 @@ import collections
 #                 validWindow = min(validWindow, j - i + 1)
 #                 break
 #     return validWindow if validWindow != float('inf') else -1
+
+
+
 # Solution 2
+# maintain a monoqueue of presums
+# when a sum appears that is greater or equal k pop the queue and
+# calculate the difference of the indices then minimize it
+# time = O(N)
 def shortestSubArray(nums: List[int], k: int) -> int:
     n = len(nums)
     prefixSum = [0]
