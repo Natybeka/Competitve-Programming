@@ -1,0 +1,11 @@
+Problem description evaluate expressions
+
+for example
+Input: s = " 3+5 / 2 "
+Output: 5
+
+-key idea pecedence of - and + is lower than * and /
+
+solution 
+1. pass through the expression
+2. if token is operand append to stack

@@ -40,3 +40,20 @@ loop passes
 moves += x - taken.pop() where x = 6 and taken.pop() = 1 5 moves
 
 for x = 7 through 10 loop does nothing because no duplicate values will be found and the total will be 9 moves
+
+Solution Two : Sorting
+If the arrays is sorted
+as we move from left to right
+if
+    - nums[i - 1] == nums[i] number is duplicated
+    - nums[i - 1] < nums[i] take one of the duplicated numbers and make unique
+
+[1,1,1,1,3,5]
+at i = 3
+taken = 3
+moves = -3
+
+at i = 4
+give = min(3, 3 - 1 - 1) = 1 slot available
+which is 2
+moves += 
