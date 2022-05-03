@@ -22,6 +22,7 @@
 # custom power functions improves the power function to log n and
 # uses the mod the prevent integer overflow
 # Runtime is O(log n)
+
 def my_pow(n: int, e: int) -> int:
     if e == 0:
         return 1
